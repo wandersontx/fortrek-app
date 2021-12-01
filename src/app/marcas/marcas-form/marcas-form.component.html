@@ -1,0 +1,50 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="marcaId" [value]="service.formData.marcaId">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="">Nome</label>
+        <input class="form-control" name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Fundador(es)</label>
+        <input class="form-control" name="fundador" #fundador="ngModel" [(ngModel)]="service.formData.fundador">
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="">Ano fundação</label>
+        <input class="form-control" name="ano_fundacao" maxlength="4" minlength="4" #ano_fundacao="ngModel" [(ngModel)]="service.formData.ano_fundacao">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="">Sede</label>
+        <input class="form-control" name="sede" #sede="ngModel" [(ngModel)]="service.formData.sede">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="">CEO</label>
+        <input class="form-control"  name="ceo" #ceo="ngModel" [(ngModel)]="service.formData.ceo">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="">Site</label>
+        <input class="form-control" name="site" #site="ngModel" [(ngModel)]="service.formData.site">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <button class="btn btn-info" type="submit">Salvar</button>
+      </div>
+    </div>
+  </div>
+</form>
