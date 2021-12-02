@@ -17,7 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     MarcasComponent,
     NavComponent,
-    MarcasFormComponent
+    MarcasFormComponent,
   ],
   imports: [
     BrowserModule,

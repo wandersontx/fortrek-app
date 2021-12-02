@@ -18,15 +18,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of marcas">
-            <td>{{ item.nome }}</td>
-            <td>{{ item.ano_fundacao }}</td>
-            <td>{{ item.fundador }}</td>
-            <td>{{ item.sede }}</td>
-            <td>{{ item.site }}</td>
+          <tr *ngFor="let marca of service.list">
+            <td>{{ marca.nome }}</td>
+            <td>{{ marca.ano_fundacao }}</td>
+            <td>{{ marca.fundador }}</td>
+            <td>{{ marca.sede }}</td>
+            <td>{{ marca.site }}</td>
             <td>
-              <a href=""><i class="fas fa-edit"></i></a>
-              <a href=""><i class="fas fa-trash-alt text-danger ml-2"></i></a>
+              <i (click)="edit(marca)" class="fas fa-edit text-primary"></i>
+              <i (click)="remove(marca)" class="fas fa-trash-alt text-danger ml-2"></i>
             </td>
           </tr>
         </tbody>

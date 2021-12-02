@@ -20,17 +20,42 @@ export class MarcasFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onSubmit(form:NgForm) {
+  onSubmit(form:NgForm) {
+    if (this.service.formData.marcaId == 0) {
+      this.insertRecord(form);
+    } else {
+      this.updateRecord(form);
+    }
+
+
+  }
+
+  insertRecord(form: NgForm) {
     this.service.postMarca().subscribe(
       response => {
         this.resetForm(form);
-        this.toastr.success("Marca cadastrada com succeso.", 'Cadastro de marcas')//125
+        this.service.refreshList();
+        this.toastr.success("Marca cadastrada com succeso.", 'ForTrek');
       },
       err => {
         console.error(err)
       }
     );
   }
+
+  updateRecord(form: NgForm) {
+    this.service.putMarca().subscribe(
+      response => {
+        this.resetForm(form);
+        this.service.refreshList();
+        this.toastr.info("Marca atualizada com succeso.", 'ForTrek');
+      },
+      err => {
+        console.error(err)
+      }
+    );
+  }
+
 
   resetForm(form: NgForm) {
     form.form.reset();
