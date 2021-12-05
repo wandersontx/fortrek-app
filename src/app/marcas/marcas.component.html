@@ -3,7 +3,7 @@
 </div>
 
 <app-marcas-form></app-marcas-form>
-  <div class="row" *ngIf="this.service.list.length">
+  <div class="row" *ngIf="this.service.list !== undefined && this.service.list.length">
     <div class="col-md-12">
       <h2 class="text-info text-center">Lista</h2>
       <table class="table table-hover">
