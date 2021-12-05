@@ -21,13 +21,13 @@ export class MarcasFormComponent implements OnInit {
   }
 
   onSubmit(form:NgForm) {
-    if (this.service.formData.marcaId == 0) {
-      this.insertRecord(form);
-    } else {
-      this.updateRecord(form);
+    if (this.validate()) {
+      if (this.service.formData.marcaId == 0) {
+        this.insertRecord(form);
+      } else {
+        this.updateRecord(form);
+      }
     }
-
-
   }
 
   insertRecord(form: NgForm) {
@@ -60,6 +60,18 @@ export class MarcasFormComponent implements OnInit {
   resetForm(form: NgForm) {
     form.form.reset();
     this.service.formData = new Marca();
+  }
+
+  validate() {
+    var marca: any = this.service.formData;
+
+    for(let key in marca) {
+      if (key !== 'marcaId' && marca[key].toString().trim() == '') {
+        this.toastr.error('Favor preencher todos os campos', 'ForTrek')
+        return;
+      }
+    }
+    return true;
   }
 
 }
