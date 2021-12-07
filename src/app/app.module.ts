@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MarcasComponent } from './marcas/marcas.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +15,6 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     MarcasComponent,
-    NavComponent,
     MarcasFormComponent,
   ],
   imports: [
